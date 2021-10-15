@@ -1,29 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <h1>hello</h1>
+    <!-- <div class="flex-box">
+       <div class="product-image">
+        <img v-bind:src="image" v-bind:alt="alt">
+       </div>
+      <div class="product-info">
+       <h1>{{ title }}</h1>
+        <p v-show="onSale">On Sale!</p>
+        <p v-if="inventory > 10">In Stock</p>
+        <p v-else-if="inventory <= 10 && inventory > 0">Almost Sold Out!</p>
+        <p v-else>Out of Stock</p>
+       <button v-on:click="addToCart">Add to Cart</button>
+        <div class="cart">
+          <p>Cart({{ cart }})</p>
+        </div>
+      </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
-  name: "App",
-  components: {
-    HelloWorld,
+  name: 'App',
+  components:{
+      el: "#app",
+  //element property^
+  data: {
+    brand: "Selina's Cool",
+    product: "Socks",
+    image: "./assets/vmSocks-green.jpg",
+    alt: "Green Socks",
+    inventory: 10,
+    onSale: false,
+    cart: 0,
   },
-};
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #14579b;
-  margin-top: 60px;
+  methods: {
+    addToCart () {
+      this.cart += 1;
+    },
+  },
+  computed: {
+    title() {
+      return this.brand + " " + this.product;
+    },
+  },
+  }
 }
+</script>
+<style>
+
 </style>
