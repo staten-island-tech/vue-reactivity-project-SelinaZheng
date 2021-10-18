@@ -25,8 +25,41 @@ export default {
   },
   data(){
     return{
-      image:"./assets/flower.jpg",
-      alt:,
+      product: 'Flowers',
+      selectedVariant: 0,
+      // alt:
+      variants: [
+       {
+       variantId: 1,
+       variantColor: 'Dark Blue',
+       variantImage: './assets/darkerflower.png',
+       variantQuantity: 10     
+       },
+       {
+       variantId: 2,
+       variantColor: 'Purple',
+       variantImage: './assets/purpleflower.png',
+       variantQuantity: 0     
+        },
+      {
+       variantId: 3,
+       variantColor: 'Light Blue',
+       variantImage: './assets/lightflower.png',
+       variantQuantity: 0     
+        },
+       {
+       variantId: 4,
+       variantColor: 'Hot Pink',
+       variantImage: './assets/hotterflower.png',
+       variantQuantity: 0     
+        },
+      {
+       variantId: 5,
+       variantColor: 'Pink',
+       variantImage: './assets/pinkflower.png',
+       variantQuantity: 0     
+        },
+      ],
     };
   },
 }
