@@ -59,6 +59,30 @@ export default {
        variantImage: './assets/pinkflower.png',
        variantQuantity: 0     
         },
+        {
+       variantId: 6,
+       variantColor: 'Red',
+       variantImage: './assets/redflower.png',
+       variantQuantity: 0     
+        },
+        {
+       variantId: 7,
+       variantColor: 'Orange',
+       variantImage: './assets/orangeflower.png',
+       variantQuantity: 0     
+        },
+        {
+       variantId: 8,
+       variantColor: 'Yellow',
+       variantImage: './assets/yellowflower.png',
+       variantQuantity: 0     
+        },
+        {
+       variantId: 9,
+       variantColor: 'Pink',
+       variantImage: './assets/pinkflower.png',
+       variantQuantity: 0     
+        },
       ],
     };
   },
