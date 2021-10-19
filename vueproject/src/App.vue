@@ -3,10 +3,14 @@
     <div class="nav-bar"></div>
     <div class="flex">
       <div class="image">
-        <img v-bind:src="image" v-bind:alt="alt">
+        <img :src="image" v-bind:alt="alt">
       </div>
-      <div class="colors">
-
+      <div class="colors"
+      v-for="(variant, index) in variants" 
+      :key="variant.variantId"
+      :style="{ backgroundColor: variant.variantColor }"
+      @mouseover="updateProduct(index)"
+      >
       </div>
       <div class="cart">
 
@@ -27,12 +31,13 @@ export default {
     return{
       product: 'Flowers',
       selectedVariant: 0,
-      // alt:
+      image: require("./assets/darkerflower.png"),
+      alt:"Flower",
       variants: [
        {
        variantId: 1,
        variantColor: 'Dark Blue',
-       variantImage: './assets/darkerflower.png',
+       variantImage: require('./assets/darkerflower.png'),
        variantQuantity: 10     
        },
        {
@@ -86,6 +91,7 @@ export default {
       ],
     };
   },
+
 }
 </script>
 
