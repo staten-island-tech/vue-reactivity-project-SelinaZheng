@@ -11,6 +11,7 @@
       :style="{ backgroundColor: variant.variantColor }"
       @mouseover="updateProduct(index)"
       >
+        <p class="name">{{ variant.variantColor }}</p>
       </div>
       <div class="cart">
 
@@ -104,4 +105,23 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.flex{
+  display: flex;
+  flex-flow: wrap;
+}
+img{
+  border: 1px solid #d8d8d8;
+  width: 50%;
+  margin: 40px;
+  box-shadow: 0px 0.5px 1px #d8d8d8;
+}
+.image{
+  width:50;
+}
+.image,
+.colors{
+  margin-top: 10px;
+  width: 40%;
+}
+
 </style>
