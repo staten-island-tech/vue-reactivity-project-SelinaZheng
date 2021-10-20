@@ -11,7 +11,6 @@
       :style="{ backgroundColor: variant.variantColor }"
       @mouseover="updateProduct(index)"
       >
-        <p class="name">{{ variant.variantColor }}</p>
       </div>
       <div class="cart">
 
@@ -37,62 +36,66 @@ export default {
       variants: [
        {
        variantId: 1,
-       variantColor: 'Dark Blue',
+       variantColor: ' #00008b',
        variantImage: require('./assets/darkerflower.png'),
        variantQuantity: 10     
        },
        {
        variantId: 2,
        variantColor: 'Purple',
-       variantImage: './assets/purpleflower.png',
+       variantImage: require('./assets/purpleflower.png'),
        variantQuantity: 0     
         },
       {
        variantId: 3,
-       variantColor: 'Light Blue',
-       variantImage: './assets/lightflower.png',
+       variantColor: '#ADD8E6',
+       variantImage:  require('./assets/lightflower.png'),
        variantQuantity: 0     
         },
        {
        variantId: 4,
-       variantColor: 'Hot Pink',
-       variantImage: './assets/hotterflower.png',
+       variantColor: '	#FF69B4',
+       variantImage:  require('./assets/hotterflower.png'),
        variantQuantity: 0     
         },
       {
        variantId: 5,
        variantColor: 'Pink',
-       variantImage: './assets/pinkflower.png',
+       variantImage:  require('./assets/pinkflower.png'),
        variantQuantity: 0     
         },
         {
        variantId: 6,
        variantColor: 'Red',
-       variantImage: './assets/redflower.png',
+       variantImage:  require('./assets/redflower.png'),
        variantQuantity: 0     
         },
         {
        variantId: 7,
        variantColor: 'Orange',
-       variantImage: './assets/orangeflower.png',
+       variantImage:  require('./assets/orangeflower.png'),
        variantQuantity: 0     
         },
         {
        variantId: 8,
        variantColor: 'Yellow',
-       variantImage: './assets/yellowflower.png',
+       variantImage:  require('./assets/yellowflower.png'),
        variantQuantity: 0     
         },
         {
        variantId: 9,
        variantColor: 'Pink',
-       variantImage: './assets/pinkflower.png',
+       variantImage:  require('./assets/pinkflower.png'),
        variantQuantity: 0     
         },
       ],
     };
   },
-
+  methods:{
+    updateProduct(variantImage){
+      this.image = variantImage
+    },
+  },
 }
 </script>
 
@@ -108,6 +111,7 @@ export default {
 .flex{
   display: flex;
   flex-flow: wrap;
+  padding: 1rem;
 }
 img{
   border: 1px solid #d8d8d8;
@@ -122,6 +126,11 @@ img{
 .colors{
   margin-top: 10px;
   width: 40%;
+}
+.colors{
+  width:2rem;
+  height:2rem;
+  margin-top:0.1rem;
 }
 
 </style>
