@@ -5,12 +5,18 @@
       <div class="image">
         <img :src="image" v-bind:alt="alt">
       </div>
-      <div class="colors"
-      v-for="(variant, index) in variants" 
-      :key="variant.variantId"
-      :style="{ backgroundColor: variant.variantColor }"
-      @mouseover="updateProduct(index)"
-      >
+      <div class="product-info">
+        <h1>{{ brand }} {{ product }}</h1>
+        <div class="color-box">
+            <div class="colors"
+            v-for="(variant, index) in variants" 
+            :key="variant.variantId"
+            :style="{ backgroundColor: variant.variantColor }"
+            @mouseover="updateProduct(index)"
+            >
+            </div>
+        </div>
+
       </div>
       <div class="cart">
 
@@ -29,6 +35,7 @@ export default {
   },
   data(){
     return{
+      brand: "SITHS's",
       product: 'Flowers',
       selectedVariant: 0,
       image: require("./assets/darkerflower.png"),
@@ -123,9 +130,13 @@ img{
   width:50;
 }
 .image,
-.colors{
+.product-info{
   margin-top: 10px;
   width: 40%;
+}
+.colors-box{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 .colors{
   width:2rem;
