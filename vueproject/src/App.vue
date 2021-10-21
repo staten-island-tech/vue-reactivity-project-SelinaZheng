@@ -101,7 +101,7 @@ export default {
   methods:{
     updateProduct(index){
       this.selectedVariant = index
-      console.log(index)
+
     },
   },
   computed:{
