@@ -143,13 +143,14 @@ img{
   margin-top: 10px;
   width: 40%;
 }
-.colors-box{
+.color-box{
   display: grid;
-  grid: repeat(2, 60px) / auto-flow 80px;
+  grid: repeat(3, 4.5rem) / auto-flow 4.5rem;
+  margin-top: 3rem;
 }
 .colors{
-  width:2rem;
-  height:2rem;
+  width:75%;
+  height:3.5rem;
   margin-top:0.1rem;
 }
 
