@@ -6,7 +6,7 @@
         <img :src="image" v-bind:alt="alt">
       </div>
       <div class="product-info">
-        <h1>{{ brand }} {{ product }}</h1>
+        <h1>{{ title }}</h1>
         <div class="color-box">
             <div class="colors"
             v-for="(variant, index) in variants" 
@@ -38,7 +38,7 @@ export default {
       brand: "SITHS's",
       product: 'Flowers',
       selectedVariant: 0,
-      image: require("./assets/darkerflower.png"),
+      // image: require("./assets/darkerflower.png"),
       alt:"Flower",
       variants: [
        {
@@ -99,10 +99,19 @@ export default {
     };
   },
   methods:{
-    updateProduct(variantImage){
-      this.image = variantImage
+    updateProduct(index){
+      this.selectedVariant = index
+      console.log(index)
     },
   },
+  computed:{
+    title(){
+      return this.brand + ' ' + this.product
+    },
+    image(){
+      return this.variants[this.selectedVariant].variantImage
+    }
+  }
 }
 </script>
 
@@ -135,8 +144,8 @@ img{
   width: 40%;
 }
 .colors-box{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid: repeat(2, 60px) / auto-flow 80px;
 }
 .colors{
   width:2rem;
