@@ -16,9 +16,26 @@
             >
             </div>
         </div>
-
       </div>
       <div class="cart">
+              <div class="quantity">
+        <h4>Quantity</h4>
+        <form>
+          <select name = "dropdown">
+          <option value = "1">1</option>
+          <option value = "2">2</option>
+          <option value = "3">3</option>
+          <option value = "4">4</option>
+          <option value = "5">5</option>
+          <option value = "6">6</option>
+          <option value = "7">7</option>
+          </select>
+        </form>
+      </div>
+        <button v-on:click="addToCart" >Add to Cart</button>
+        <div class="cart">
+          <p>Cart({{cart}})</p>
+        </div>
 
       </div>
     </div>
