@@ -22,6 +22,7 @@
 
       </div>
     </div>
+    <div class="footer-bar"></div>
   </div>
 </template>
 
@@ -123,6 +124,19 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.nav-bar,
+.footer-bar{
+  height:2rem;
+  background-color: #2c3e50;
+  width:100%;
+}
+.footer-bar{
+  position:fixed;
+  bottom:4rem;
+  left:0;
+  text-align:center;
+
 }
 .flex{
   display: flex;
