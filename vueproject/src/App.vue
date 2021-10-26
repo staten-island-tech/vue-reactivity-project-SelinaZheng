@@ -32,7 +32,7 @@
           </select>
         </form>
       </div>
-        <button v-on:click="addToCart" >Add to Cart</button>
+        <button @click="addToCart" >Add to Cart</button>
         <div class="cart">
           <p>Cart({{cart}})</p>
         </div>
@@ -58,6 +58,7 @@ export default {
       selectedVariant: 0,
       // image: require("./assets/darkerflower.png"),
       alt:"Flower",
+      cart:0,
       variants: [
        {
        variantId: 1,
@@ -116,11 +117,14 @@ export default {
       ],
     };
   },
-  methods:{
+   methods:{
     updateProduct(index){
-      this.selectedVariant = index
-
+      this.selectedVariant = index,
+      console.log(index)
     },
+    addToCart(){
+      this.cart
+    }
   },
   computed:{
     title(){
@@ -184,5 +188,22 @@ img{
   height:3.5rem;
   margin-top:0.1rem;
 }
+.cart {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  border: 1px solid #d8d8d8;
+  padding: 5px 20px;
+  margin-top:3rem;
+}
 
+button {
+  margin-top: 30px;
+  border: none;
+  background-color: #431eea;
+  color: white;
+  height: 2rem;
+  width: 100px;
+  font-size: 14px;
+}
 </style>
