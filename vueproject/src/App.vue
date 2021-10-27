@@ -32,7 +32,7 @@
           </select>
         </form>
       </div>
-        <button @click="addToCart" >Add to Cart</button>
+        <button @click="getCartValue" >Add to Cart</button>
         <div class="cart">
           <p>Cart({{cart}})</p>
         </div>
@@ -59,6 +59,12 @@ export default {
       // image: require("./assets/darkerflower.png"),
       alt:"Flower",
       cart:0,
+      options:[
+        {
+          value: 1,
+          selectedIndex: 1,
+        }
+      ],
       variants: [
        {
        variantId: 1,
@@ -122,9 +128,16 @@ export default {
       this.selectedVariant = index,
       console.log(index)
     },
-    addToCart(){
-      this.cart
+    getCartValue(){
+       this.cart += this.options[this.selectedIndex]
+      //  console.log(selectedIndex)
     }
+    // addToCart(){
+    //   this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId)
+    // },    
+    // updateCart(id){
+    //   this.cart.push(id)
+    // }
   },
   computed:{
     title(){
