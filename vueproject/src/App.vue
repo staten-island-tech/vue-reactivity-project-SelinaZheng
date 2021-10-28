@@ -127,7 +127,7 @@ export default {
       console.log(index)
     },
     handleInput(){
-      this.cart += this.amount
+      this.cart = this.amount
     }
     // getCartValue(index){
     //    this.cart += index,
@@ -149,7 +149,7 @@ export default {
       return this.variants[this.selectedVariant].variantImage
     },
     value(){
-      return this.options[this.selectedIndex]
+      return this.amount
     }
   }
 }
