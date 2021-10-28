@@ -21,18 +21,20 @@
               <div class="quantity">
         <h4>Quantity</h4>
         <form>
-          <select name = "dropdown">
-          <option value = "1">1</option>
-          <option value = "2">2</option>
-          <option value = "3">3</option>
-          <option value = "4">4</option>
-          <option value = "5">5</option>
-          <option value = "6">6</option>
-          <option value = "7">7</option>
+          <select type= "number" 
+          v-model="amount"
+          name = "dropdown">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
           </select>
         </form>
       </div>
-        <button @click="getCartValue" >Add to Cart</button>
+        <button @click="handleInput" >Add to Cart</button>
         <div class="cart">
           <p>Cart({{cart}})</p>
         </div>
@@ -56,15 +58,11 @@ export default {
       brand: "SITHS's",
       product: 'Flowers',
       selectedVariant: 0,
+      amount: 1,
       // image: require("./assets/darkerflower.png"),
       alt:"Flower",
       cart:0,
-      options:[
-        {
-          value: 1,
-          selectedIndex: 1,
-        }
-      ],
+      selectedIndex: 0,
       variants: [
        {
        variantId: 1,
@@ -128,16 +126,20 @@ export default {
       this.selectedVariant = index,
       console.log(index)
     },
-    getCartValue(){
-       this.cart += this.options[this.selectedIndex]
-      //  console.log(selectedIndex)
+    handleInput(){
+      this.cart += this.amount
     }
-    // addToCart(){
-    //   this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId)
-    // },    
-    // updateCart(id){
-    //   this.cart.push(id)
+    // getCartValue(index){
+    //    this.cart += index,
+    //   this.selectedIndex = index
+    //   //  console.log(selectedIndex)
     // }
+    // // addToCart(){
+    // //   this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId)
+    // // },    
+    // // updateCart(id){
+    // //   this.cart.push(id)
+    // // }
   },
   computed:{
     title(){
@@ -145,6 +147,9 @@ export default {
     },
     image(){
       return this.variants[this.selectedVariant].variantImage
+    },
+    value(){
+      return this.options[this.selectedIndex]
     }
   }
 }
