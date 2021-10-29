@@ -129,7 +129,7 @@ export default {
     handleInput(){
       let amount = Number(this.amount)
       this.cart = this.cart + amount;
-    }
+    }  
     // getCartValue(index){
     //    this.cart += index,
     //   this.selectedIndex = index
