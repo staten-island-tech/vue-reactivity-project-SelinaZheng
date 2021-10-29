@@ -127,7 +127,8 @@ export default {
       console.log(index)
     },
     handleInput(){
-      this.cart = this.amount
+      let amount = Number(this.amount)
+      this.cart = this.cart + amount;
     }
     // getCartValue(index){
     //    this.cart += index,
