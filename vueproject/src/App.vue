@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="nav-bar"></div>
+    <div class="border">
     <div class="flex">
       <div class="image">
         <img :src="image" v-bind:alt="alt">
@@ -41,7 +41,7 @@
 
       </div>
     </div>
-    <div class="footer-bar"></div>
+    </div>
   </div>
 </template>
 
@@ -163,7 +163,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background: linear-gradient(#64a7e6 75%, #4fc24f 25%);
+  width:100vw;
+  height:100vh;
+  margin:0 auto;
 }
 .nav-bar,
 .footer-bar{
@@ -182,6 +185,8 @@ export default {
   display: flex;
   flex-flow: wrap;
   padding: 1rem;
+  width:60vw;
+  height:50vh;
 }
 img{
   border: 1px solid #d8d8d8;
@@ -212,6 +217,7 @@ img{
   flex-direction:column;
   justify-content: center;
   border: 1px solid #d8d8d8;
+  background-color:  rgba(238, 238, 238, 0.267);
   padding: 5px 20px;
   margin-top:3rem;
 }
@@ -224,5 +230,15 @@ button {
   height: 2rem;
   width: 100px;
   font-size: 14px;
+}
+.border {
+  /* background-color: rgba(183, 0, 255, 0.267); */
+  margin:0 auto;
+  width:80vw;
+  height:70vh;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 </style>
