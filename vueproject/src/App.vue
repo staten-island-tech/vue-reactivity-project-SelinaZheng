@@ -41,6 +41,11 @@
 
       </div>
     </div>
+          <img class="sun" src="./assets/sun.png" alt="sun image">
+      <img class="cloud cloud1" src="./assets/cloud.png" alt="cloud image">
+      <img class="cloud cloud3" src="./assets/cloud1.png" alt="cloud image">
+      <img class="cloud cloud2" src="./assets/cloud.png" alt="cloud image">
+      <img class="cloud cloud4" src="./assets/cloud2.png" alt="cloud image">
     </div>
   </div>
 </template>
@@ -240,5 +245,40 @@ button {
     align-items: center;
     justify-content: center;
 
+}
+.sun, 
+.cloud{
+  position:absolute;
+  float:left;
+  border:none;
+  box-shadow:none;
+}
+.sun{
+    width:15vw;
+  left:0;
+  top:0;
+}
+.cloud{
+  width:10vw;
+  opacity:0.5;
+}
+.cloud1{
+  top:0;
+  left:20vw;
+}
+.cloud2{
+  top:2vh;
+  left:60vw;
+  opacity:0.7;
+}
+.cloud3{
+  top:0;
+  left:40vw;
+  opacity:0.7;
+}
+.cloud4{
+  top:2vw;
+  left:80vw;
+  opacity:.9;
 }
 </style>
